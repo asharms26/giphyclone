@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" ng-app="GiphySearchApp">
+<head>
+  <title>Giphy Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header>
+    <nav id="header-nav" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <div class="navbar-brand">
+            <a href="index.html">Giphy Search</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container" id="main-container" ng-controller="SearchController">
+    <div class="row search-row">
+      <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12">
+        <h3 class="text-center">
+         Search for a Giphy of your choice!
+       </h3>
+       <div class="input-group">
+         <input type="text" class="form-control" ng-model="searchTerm">
+         <span class="input-group-btn"><button class="btn btn-default" type="button" ng-click="searchGiphs()">Search</button></span>
+       </div>
+     </div>
+   </div>
+   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 giph-wrapper" ng-repeat="giph in giphyList">
+    <img class="giph-image" ng-src="{{giph.images.downsized.url}}" on-load-animate/>
+  </div>
+  <div id="loading-div" ng-if="loadingDiv">
+      <h1 id="loading-text">
+        Working on it...
+      </h1>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+<script src="scripts/app.js"></script>
+</body>
+</html>
