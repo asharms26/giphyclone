@@ -35,14 +35,15 @@
    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 giph-wrapper" ng-repeat="giph in giphyList">
     <img class="giph-image" ng-src="{{giph.images.downsized.url}}" on-load-animate/>
   </div>
-  <div id="loading-div" ng-if="loadingDiv">
-    <h1 id="loading-text">
-      Working on it...
-    </h1>
-  </div>
+  
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 <script src="scripts/app.js"></script>
+<div id="loading-div" ng-if="!loadingDiv">
+    <h1 id="loading-text">
+      Working on it...
+    </h1>
+  </div>
 </body>
 </html>
